@@ -15,7 +15,7 @@ func main() {
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Logger)
 
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+	r.Get("/forward", func(w http.ResponseWriter, r *http.Request) {
 		target := r.Header.Get("target")
 
 		url, err := url.Parse(target)
